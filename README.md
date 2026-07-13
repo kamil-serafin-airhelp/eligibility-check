@@ -2,6 +2,18 @@
 
 Under EU air passenger regulation, passengers may be owed fixed compensation when a flight is disrupted. You have to collect essential information from the user to complete this task. Build a small frontend app that tells a passenger whether they're eligible and for how much.
 
+## Stack
+
+Stack: Vite, React, TypeScript, React Router, Chakra UI, MSW (Mock service worker).
+
+Other:
+
+- React Query
+- Valtio
+- Redux or Zustand
+- React Hook Form
+- Zod
+
 ## Requirements
 
 ### 1. Mock Service Worker stub — API endpoint `POST /api/eligibility` accepting:
@@ -53,4 +65,3 @@ Also installed and ready to use (optional, pick what you like): **React Query, V
 ## Notes
 
 - AI coding tools (Cursor, Claude Code, Copilot) are allowed — keep their usage visible on the shared screen.
-- Don't aim to finish everything — aim for a vertical slice that works end to end. Tell us what you'd cut and why.
