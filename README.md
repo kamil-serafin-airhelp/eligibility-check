@@ -33,7 +33,7 @@ Other:
 
 ### 3. Frontend
 
-A form that collects the inputs, validates them, calls the stubbed API, and shows the result (eligible + amount, or a clear "not eligible" with reason).
+Set up an `/eligibility-check` route with a form that collects the inputs, validates them, calls the stubbed API, and shows the result (eligible + amount, or a clear "not eligible" with reason).
 
 ### 4. Tests
 

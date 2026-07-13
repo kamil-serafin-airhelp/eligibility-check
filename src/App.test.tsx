@@ -17,7 +17,7 @@ describe('App', () => {
     )
 
     expect(
-      screen.getByRole('heading', { name: 'Eligibility Funnel' }),
+      screen.getByRole('heading', { name: 'Eligibility Funnel — Live Coding Task' }),
     ).toBeInTheDocument()
   })
 })
