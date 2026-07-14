@@ -1,7 +1,15 @@
 import '@testing-library/jest-dom/vitest'
-import { afterAll, afterEach, beforeAll } from 'vitest'
-import { server } from '../mocks/server'
+import { afterEach, beforeEach } from 'vitest'
+import type { Server } from 'miragejs'
+import { makeServer } from '../mocks/server'
 
-beforeAll(() => server.listen({ onUnhandledRequest: 'error' }))
-afterEach(() => server.resetHandlers())
-afterAll(() => server.close())
+// A fresh Mirage server for every test — routes from src/mocks/server.ts.
+let server: Server
+
+beforeEach(() => {
+  server = makeServer({ environment: 'test' })
+})
+
+afterEach(() => {
+  server.shutdown()
+})

@@ -4,7 +4,7 @@ Under EU air passenger regulation, passengers may be owed fixed compensation whe
 
 ## Stack
 
-Stack: Vite, React, TypeScript, React Router, Chakra UI, MSW (Mock service worker).
+Stack: Vite, React, TypeScript, React Router, Chakra UI, Mirage JS (API mocking).
 
 Other:
 
@@ -16,7 +16,7 @@ Other:
 
 ## Requirements
 
-### 1. Mock Service Worker stub — API endpoint `POST /api/eligibility` accepting:
+### 1. Mirage JS stub — API endpoint `POST /api/eligibility` accepting:
 
 - `flightDistanceKm` (number)
 - `disruption`: `"delay"` or `"cancellation"`
@@ -41,7 +41,7 @@ At least a couple of tests where you think they matter most. We care more about 
 
 ## Getting started
 
-Requires Node.js ≥ 20 and pnpm. Run **locally or on CodeSandbox** — StackBlitz is not supported: its WebContainers can't register Service Workers ([webcontainer-core#846](https://github.com/stackblitz/webcontainer-core/issues/846)), so MSW browser mocking doesn't work there (tests would still pass, but the app's API calls would fail).
+Requires Node.js ≥ 20 and pnpm. Works locally and in browser sandboxes (StackBlitz, CodeSandbox) — Mirage intercepts requests in-page, no Service Worker needed.
 
 ```bash
 pnpm install
@@ -57,8 +57,8 @@ pnpm build      # typecheck + production build
 - **Vite + React + TypeScript** — entry point `src/main.tsx`, single route in `src/App.tsx`.
 - **React Router** — `BrowserRouter` mounted, add routes in `src/App.tsx`.
 - **Chakra UI** — `ChakraProvider` mounted, use any Chakra components.
-- **MSW** — worker registered in the browser (`src/mocks/browser.ts`) and in tests (`src/mocks/server.ts`). Add your `/api/eligibility` handler in `src/mocks/handlers.ts`. An example `GET /api/health` handler shows the wiring works.
-- **Vitest + Testing Library** — example tests in `src/App.test.tsx`, MSW active in every test via `src/test/setup.ts`.
+- **Mirage JS** — server started in `src/main.tsx`, routes live in `src/mocks/server.ts`. Add your `POST /api/eligibility` route there. An example `GET /api/health` route shows the wiring works.
+- **Vitest + Testing Library** — example tests in `src/App.test.tsx`, a fresh Mirage server runs in every test via `src/test/setup.ts`.
 
 Also installed and ready to use (optional, pick what you like): **React Query, Valtio, Redux Toolkit, Zustand, React Hook Form, Zod**.
 

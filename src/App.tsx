@@ -20,7 +20,7 @@ function HomePage() {
       </Text>
 
       <Heading size="md" mb={3}>
-        1. Mock Service Worker stub
+        1. Mirage JS stub
       </Heading>
       <Text mb={2}>
         API endpoint <Code>POST /api/eligibility</Code> accepting:

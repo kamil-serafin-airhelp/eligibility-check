@@ -22,7 +22,7 @@ describe('App', () => {
   })
 })
 
-describe('MSW', () => {
+describe('Mirage', () => {
   it('serves mocked API responses in tests', async () => {
     const response = await fetch('/api/health')
 
