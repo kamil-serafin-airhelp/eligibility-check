@@ -41,7 +41,7 @@ At least a couple of tests where you think they matter most. We care more about 
 
 ## Getting started
 
-Requires Node.js ≥ 20 and pnpm.
+Requires Node.js ≥ 20 and pnpm. Run **locally or on CodeSandbox** — StackBlitz is not supported: its WebContainers can't register Service Workers ([webcontainer-core#846](https://github.com/stackblitz/webcontainer-core/issues/846)), so MSW browser mocking doesn't work there (tests would still pass, but the app's API calls would fail).
 
 ```bash
 pnpm install

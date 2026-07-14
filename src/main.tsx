@@ -6,7 +6,17 @@ import App from './App.tsx'
 
 async function enableMocking() {
   const { worker } = await import('./mocks/browser')
-  return worker.start({ onUnhandledRequest: 'bypass' })
+  try {
+    await worker.start({ onUnhandledRequest: 'bypass' })
+  } catch (error) {
+    // Service Workers are not supported in some sandboxes (e.g. StackBlitz
+    // WebContainers), so browser API mocking is unavailable there. Tests are
+    // unaffected — they use msw/node. Run locally or on CodeSandbox instead.
+    console.warn(
+      '[msw] Service Worker registration failed — API mocking is disabled in this environment.',
+      error,
+    )
+  }
 }
 
 enableMocking().then(() => {
