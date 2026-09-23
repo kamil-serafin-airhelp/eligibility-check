@@ -29,7 +29,9 @@ Other:
 - Extraordinary circumstances → not eligible, regardless of anything else.
 - Delay: eligible if arrival delay ≥ 3 hours.
 - Cancellation: eligible if the passenger was notified about the disruption less than 14 days before departure.
-- Compensation by distance: ≤1500 km → €250; 1500–3500 km → €400; >3500 km → €600.
+- Compensation by distance: ≤1500 km → €250; more than 1500 km up to 3500 km → €400; >3500 km → €600.
+
+These rules intentionally leave out parts of EC261: re-routing offers (which can cancel or halve compensation), and the rule that flights within the EU over 1500 km get €400 whatever their length.
 
 ### 3. Frontend
 

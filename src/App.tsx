@@ -49,7 +49,7 @@ function HomePage() {
       <Heading size="md" mb={3}>
         2. Business rules (simplified EC261)
       </Heading>
-      <UnorderedList mb={6} spacing={1}>
+      <UnorderedList mb={3} spacing={1}>
         <ListItem>
           Extraordinary circumstances → not eligible, regardless of anything
           else.
@@ -60,10 +60,15 @@ function HomePage() {
           disruption less than 14 days before departure.
         </ListItem>
         <ListItem>
-          Compensation by distance: ≤1500 km → €250; 1500–3500 km → €400;
-          &gt;3500 km → €600.
+          Compensation by distance: ≤1500 km → €250; more than 1500 km up to
+          3500 km → €400; &gt;3500 km → €600.
         </ListItem>
       </UnorderedList>
+      <Text mb={6}>
+        These rules intentionally leave out parts of EC261: re-routing offers
+        (which can cancel or halve compensation), and the rule that flights
+        within the EU over 1500 km get €400 whatever their length.
+      </Text>
 
       <Heading size="md" mb={3}>
         3. Frontend
